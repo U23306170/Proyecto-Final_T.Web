@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante Sabor Peruano: platos tradicionales, contacto, registro e intranet administrativa.">
+    <title>Registro | Sabor Peruano</title>
+    <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <script src="js/menu-responsivo.js" defer></script>
+    <script src="js/registro.js" defer></script>
+</head><body>
+    <header class="encabezado-sitio">
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+            <a class="marca-sitio" href="index.html">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <span>Sabor Peruano</span>
+            </a>
+            <button class="boton-menu" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+            <div class="menu-principal">
+                <a class="enlace-menu" href="index.html">Inicio</a>
+                <a class="enlace-menu" href="sobre-nosotros.html">Nosotros</a>
+                <a class="enlace-menu" href="nuestro-catalogo.html">Catálogo</a>
+                <a class="enlace-menu" href="contacto.html">Contacto</a>
+                <a class="enlace-menu" href="login.html">Iniciar sesión</a>
+                <a class="enlace-menu" href="registro.html" aria-current="page">Registro</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor-principal">
+            <div class="contenedor-acceso">
+                <form class="formulario-sitio" id="formulario-registro" novalidate onsubmit="registrarUsuario(event)">
+                    <fieldset>
+                        <legend>Crear una cuenta</legend>
+                        <p class="descripcion-formulario">El registro se simula en el navegador y permite ingresar posteriormente a la intranet.</p>
+                        <div class="grupo-campo">
+                            <label for="nombre-registro">Nombre completo</label>
+                            <input id="nombre-registro" name="nombre-registro" type="text" required maxlength="60" autocomplete="name" oninput="validarCampoRegistro(this)">
+                            <span class="error-campo" id="error-nombre-registro"></span>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="correo-registro">Correo electrónico</label>
+                            <input id="correo-registro" name="correo-registro" type="email" required autocomplete="email" oninput="validarCampoRegistro(this)">
+                            <span class="error-campo" id="error-correo-registro"></span>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="celular-registro">Celular</label>
+                            <input id="celular-registro" name="celular-registro" type="tel" required inputmode="numeric" maxlength="9" autocomplete="tel" onchange="validarCampoRegistro(this)" oninput="validarCampoRegistro(this)">
+                            <span class="error-campo" id="error-celular-registro"></span>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="clave-registro">Contraseña</label>
+                            <input id="clave-registro" name="clave-registro" type="password" required minlength="6" maxlength="20" autocomplete="new-password" oninput="validarCampoRegistro(this)">
+                            <span class="error-campo" id="error-clave-registro"></span>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="confirmar-clave">Confirmar contraseña</label>
+                            <input id="confirmar-clave" name="confirmar-clave" type="password" required autocomplete="new-password" oninput="validarCampoRegistro(this)">
+                            <span class="error-campo" id="error-confirmar-clave"></span>
+                        </div>
+                        <label class="opciones-formulario" for="terminos">
+                            <input id="terminos" type="checkbox" onchange="validarTerminos(this)">
+                            Acepto los términos y condiciones.
+                        </label>
+                        <span class="error-campo" id="error-terminos"></span>
+                        <p class="mensaje-formulario" id="mensaje-registro" aria-live="polite"></p>
+                        <button class="boton boton-primario" type="submit">Registrar cuenta</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <dialog class="dialogo" id="dialogo-registro">
+        <div class="dialogo-contenido">
+            <h2>Registro completado</h2>
+            <p>La cuenta se guardó localmente para la simulación del proyecto.</p>
+            <div class="dialogo-acciones">
+                <button class="boton boton-primario" type="button" onclick="irAlLogin()">Ir a iniciar sesión</button>
+            </div>
+        </div>
+    </dialog>
+    <footer class="pie-sitio">
+        <div class="contenido-pie">
+            <section class="marca-pie">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <div>
+                    <h2>Sabor Peruano</h2>
+                    <p>Tradición, calidad y atención cercana en cada visita.</p>
+                    <div class="redes-sociales" aria-label="Redes sociales">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+                    </div>
+                </div>
+            </section>
+            <section class="columna-pie">
+                <h3>Servicio</h3>
+                <ul>
+                    <li>Reservas</li>
+                    <li>Delivery</li>
+                    <li>Libro de reclamaciones</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Restaurante</h3>
+                <ul>
+                    <li>Carta peruana</li>
+                    <li>Locales en Lima</li>
+                    <li>Atención familiar</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Horario</h3>
+                <p>Lunes a domingo</p>
+                <p>12:00 p. m. - 11:00 p. m.</p>
+            </section>
+        </div>
+        <p class="pie-legal">© 2026 Sabor Peruano. Proyecto académico de sitio web.</p>
+    </footer>
+</body>
+</html>

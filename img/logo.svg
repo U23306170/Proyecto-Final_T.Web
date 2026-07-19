@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="titulo descripcion">
+  <title id="titulo">Logo Sabor Peruano</title>
+  <desc id="descripcion">Plato dorado con cubiertos y una bandera peruana</desc>
+  <rect width="160" height="160" rx="32" fill="#fff8ed"/>
+  <circle cx="80" cy="82" r="47" fill="#f2c94c" stroke="#991b1b" stroke-width="7"/>
+  <circle cx="80" cy="82" r="29" fill="#fff8ed" stroke="#991b1b" stroke-width="4"/>
+  <path d="M29 33h15v95H29zM35 33v35M25 33v35M45 33v35" fill="none" stroke="#2d221c" stroke-width="6" stroke-linecap="round"/>
+  <path d="M125 32c-10 11-12 27-12 43v53" fill="none" stroke="#2d221c" stroke-width="7" stroke-linecap="round"/>
+  <path d="M62 70h36v24H62z" fill="#ffffff"/>
+  <path d="M62 70h12v24H62zM86 70h12v24H86z" fill="#d71920"/>
+</svg>

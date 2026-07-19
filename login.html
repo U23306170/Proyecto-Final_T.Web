@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante Sabor Peruano: platos tradicionales, contacto, registro e intranet administrativa.">
+    <title>Iniciar sesión | Sabor Peruano</title>
+    <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <script src="js/menu-responsivo.js" defer></script>
+    <script src="js/login.js" defer></script>
+</head><body>
+    <header class="encabezado-sitio">
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+            <a class="marca-sitio" href="index.html">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <span>Sabor Peruano</span>
+            </a>
+            <button class="boton-menu" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+            <div class="menu-principal">
+                <a class="enlace-menu" href="index.html">Inicio</a>
+                <a class="enlace-menu" href="sobre-nosotros.html">Nosotros</a>
+                <a class="enlace-menu" href="nuestro-catalogo.html">Catálogo</a>
+                <a class="enlace-menu" href="contacto.html">Contacto</a>
+                <a class="enlace-menu" href="login.html" aria-current="page">Iniciar sesión</a>
+                <a class="enlace-menu" href="registro.html">Registro</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor-principal">
+            <div class="contenedor-acceso">
+                <form class="formulario-sitio" id="formulario-login" novalidate onsubmit="iniciarSesion(event)">
+                    <fieldset>
+                        <legend>Iniciar sesión</legend>
+                        <p class="descripcion-formulario">Ingrese sus credenciales para acceder a la intranet.</p>
+                        <div class="grupo-campo">
+                            <label for="correo">Correo electrónico</label>
+                            <input id="correo" name="correo" type="email" required autocomplete="email" oninput="validarCampoLogin(this)">
+                            <span class="error-campo" id="error-correo"></span>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="clave">Contraseña</label>
+                            <input id="clave" name="clave" type="password" required minlength="6" autocomplete="current-password" oninput="validarCampoLogin(this)">
+                            <span class="error-campo" id="error-clave"></span>
+                        </div>
+                        <label class="opciones-formulario" for="mostrar-clave">
+                            <input id="mostrar-clave" type="checkbox" onchange="alternarClaveLogin(this)">
+                            Mostrar contraseña
+                        </label>
+                        <p class="mensaje-formulario" id="mensaje-login" aria-live="polite"></p>
+                        <button class="boton boton-primario" type="submit">Acceder</button>
+                        <p class="ayuda-acceso"><strong>Cuenta de demostración:</strong><br>Correo: admin@mail.com<br>Contraseña: 123456</p>
+                        <p class="enlace-registro">¿No tiene una cuenta? <a href="registro.html">Regístrese aquí</a>.</p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="pie-sitio">
+        <div class="contenido-pie">
+            <section class="marca-pie">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <div>
+                    <h2>Sabor Peruano</h2>
+                    <p>Tradición, calidad y atención cercana en cada visita.</p>
+                    <div class="redes-sociales" aria-label="Redes sociales">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+                    </div>
+                </div>
+            </section>
+            <section class="columna-pie">
+                <h3>Servicio</h3>
+                <ul>
+                    <li>Reservas</li>
+                    <li>Delivery</li>
+                    <li>Libro de reclamaciones</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Restaurante</h3>
+                <ul>
+                    <li>Carta peruana</li>
+                    <li>Locales en Lima</li>
+                    <li>Atención familiar</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Horario</h3>
+                <p>Lunes a domingo</p>
+                <p>12:00 p. m. - 11:00 p. m.</p>
+            </section>
+        </div>
+        <p class="pie-legal">© 2026 Sabor Peruano. Proyecto académico de sitio web.</p>
+    </footer>
+</body>
+</html>

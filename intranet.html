@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante Sabor Peruano: platos tradicionales, contacto, registro e intranet administrativa.">
+    <title>Intranet | Sabor Peruano</title>
+    <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/intranet.css">
+    <script src="js/menu-responsivo.js" defer></script>
+    <script src="js/intranet.js" defer></script>
+</head><body>
+    <header class="encabezado-sitio">
+        <nav class="navegacion-intranet" aria-label="Navegación de intranet">
+            <a class="marca-sitio" href="intranet.html">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <span>Intranet Sabor Peruano</span>
+            </a>
+            <button class="boton-menu" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+            <div class="menu-intranet">
+                <a class="enlace-menu" href="#resumen" aria-current="page">Resumen</a>
+                <a class="enlace-menu" href="#pedidos">Pedidos</a>
+                <a class="enlace-menu" href="#actividad">Actividad</a>
+                <button class="boton-salir-menu" type="button" onclick="abrirCierreSesion()">Cerrar sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor-principal">
+            <header class="cabecera-intranet" id="resumen">
+                <div>
+                    <h1>Panel administrativo</h1>
+                    <p id="saludo-usuario">Bienvenido</p>
+                </div>
+                <button class="boton boton-contorno" type="button" onclick="abrirCierreSesion()">Cerrar sesión</button>
+            </header>
+
+            <section class="cuadricula-indicadores" aria-label="Indicadores del restaurante">
+                <article class="indicador-intranet"><h2>Pedidos del día</h2><p class="valor-indicador">18</p></article>
+                <article class="indicador-intranet"><h2>Reservas activas</h2><p class="valor-indicador">7</p></article>
+                <article class="indicador-intranet"><h2>Mensajes pendientes</h2><p class="valor-indicador">5</p></article>
+                <article class="indicador-intranet"><h2>Mesas disponibles</h2><p class="valor-indicador">12</p></article>
+            </section>
+
+            <div class="paneles-intranet">
+                <section class="panel" id="pedidos">
+                    <h2 class="titulo-seccion">Pedidos recientes</h2>
+                    <div class="tabla-responsive">
+                        <table class="tabla-intranet">
+                            <thead><tr><th>Código</th><th>Cliente</th><th>Pedido</th><th>Estado</th></tr></thead>
+                            <tbody>
+                                <tr><td>P-101</td><td>María Torres</td><td>Ceviche</td><td>Preparando</td></tr>
+                                <tr><td>P-102</td><td>Luis Ramos</td><td>Lomo saltado</td><td>Listo</td></tr>
+                                <tr><td>P-103</td><td>Ana Pérez</td><td>Causa limeña</td><td>Entregado</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <aside class="panel" id="actividad">
+                    <h2 class="titulo-seccion">Actividad</h2>
+                    <ul class="lista-actividad">
+                        <li>Se registraron tres nuevas reservas.</li>
+                        <li>Dos pedidos cambiaron al estado “Listo”.</li>
+                        <li>Se recibió una consulta desde Contacto.</li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <dialog class="dialogo" id="dialogo-cierre-sesion">
+        <div class="dialogo-contenido">
+            <h2>Cerrar sesión</h2>
+            <p>¿Desea finalizar la sesión y regresar a la página de inicio?</p>
+            <div class="dialogo-acciones">
+                <button class="boton boton-contorno" type="button" onclick="cancelarCierreSesion()">Cancelar</button>
+                <button class="boton boton-primario" type="button" onclick="confirmarCierreSesion()">Sí, cerrar sesión</button>
+            </div>
+        </div>
+    </dialog>
+    <footer class="pie-sitio">
+        <div class="contenido-pie">
+            <section class="marca-pie">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <div>
+                    <h2>Sabor Peruano</h2>
+                    <p>Tradición, calidad y atención cercana en cada visita.</p>
+                    <div class="redes-sociales" aria-label="Redes sociales">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+                    </div>
+                </div>
+            </section>
+            <section class="columna-pie">
+                <h3>Servicio</h3>
+                <ul>
+                    <li>Reservas</li>
+                    <li>Delivery</li>
+                    <li>Libro de reclamaciones</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Restaurante</h3>
+                <ul>
+                    <li>Carta peruana</li>
+                    <li>Locales en Lima</li>
+                    <li>Atención familiar</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Horario</h3>
+                <p>Lunes a domingo</p>
+                <p>12:00 p. m. - 11:00 p. m.</p>
+            </section>
+        </div>
+        <p class="pie-legal">© 2026 Sabor Peruano. Proyecto académico de sitio web.</p>
+    </footer>
+</body>
+</html>

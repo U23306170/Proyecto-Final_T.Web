@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante Sabor Peruano: platos tradicionales, contacto, registro e intranet administrativa.">
+    <title>Inicio | Sabor Peruano</title>
+    <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/menu-responsivo.js" defer></script>
+    <script src="js/inicio.js" defer></script>
+</head><body>
+    <header class="encabezado-sitio">
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+            <a class="marca-sitio" href="index.html">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <span>Sabor Peruano</span>
+            </a>
+            <button class="boton-menu" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+            <div class="menu-principal">
+                <a class="enlace-menu" href="index.html" aria-current="page">Inicio</a>
+                <a class="enlace-menu" href="sobre-nosotros.html">Nosotros</a>
+                <a class="enlace-menu" href="nuestro-catalogo.html">Catálogo</a>
+                <a class="enlace-menu" href="contacto.html">Contacto</a>
+                <a class="enlace-menu" href="login.html">Iniciar sesión</a>
+                <a class="enlace-menu" href="registro.html">Registro</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor-principal">
+            <section class="seccion-hero" aria-labelledby="titulo-principal">
+                <div class="contenido-hero">
+                    <p class="mensaje-exito">Gastronomía peruana con identidad</p>
+                    <h1 id="titulo-principal">El auténtico sabor del Perú en cada plato</h1>
+                    <p>Recetas tradicionales, ingredientes frescos y una atención pensada para compartir en familia. La propuesta conserva la esencia original del proyecto y ordena sus componentes bajo una misma identidad visual.</p>
+                    <div class="acciones-hero">
+                        <button class="boton boton-primario" type="button" onclick="irAlCatalogo()">Ver catálogo</button>
+                        <a class="boton boton-contorno" href="contacto.html">Reservar una mesa</a>
+                    </div>
+                </div>
+                <figure class="imagen-hero">
+                    <img src="img/causa.webp" alt="Causa limeña presentada en un plato oscuro">
+                </figure>
+            </section>
+
+            <section class="seccion-destacados" aria-labelledby="titulo-destacados">
+                <h2 class="titulo-seccion" id="titulo-destacados">Platos destacados</h2>
+                <p class="texto-introductorio">Una selección breve de preparaciones representativas de la cocina peruana.</p>
+                <button class="boton boton-secundario" id="boton-destacados" type="button" aria-expanded="true" onclick="alternarDestacados()">Ocultar platos destacados</button>
+                <div class="cuadricula-destacados" id="platos-destacados">
+                    <article class="tarjeta-destacada">
+                        <img src="img/ceviche.svg" alt="Representación del ceviche peruano">
+                        <div class="contenido-tarjeta"><h3>Ceviche clásico</h3><p>Pescado fresco, limón, ají limo, camote y choclo.</p></div>
+                    </article>
+                    <article class="tarjeta-destacada">
+                        <img src="img/lomo.svg" alt="Representación del lomo saltado">
+                        <div class="contenido-tarjeta"><h3>Lomo saltado</h3><p>Lomo fino al wok con cebolla, tomate, papas y arroz.</p></div>
+                    </article>
+                    <article class="tarjeta-destacada">
+                        <img src="img/causa.webp" alt="Causa limeña con relleno de pollo y palta">
+                        <div class="contenido-tarjeta"><h3>Causa limeña</h3><p>Papa amarilla, ají, limón, pollo y palta.</p></div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="pie-sitio">
+        <div class="contenido-pie">
+            <section class="marca-pie">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <div>
+                    <h2>Sabor Peruano</h2>
+                    <p>Tradición, calidad y atención cercana en cada visita.</p>
+                    <div class="redes-sociales" aria-label="Redes sociales">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+                    </div>
+                </div>
+            </section>
+            <section class="columna-pie">
+                <h3>Servicio</h3>
+                <ul>
+                    <li>Reservas</li>
+                    <li>Delivery</li>
+                    <li>Libro de reclamaciones</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Restaurante</h3>
+                <ul>
+                    <li>Carta peruana</li>
+                    <li>Locales en Lima</li>
+                    <li>Atención familiar</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Horario</h3>
+                <p>Lunes a domingo</p>
+                <p>12:00 p. m. - 11:00 p. m.</p>
+            </section>
+        </div>
+        <p class="pie-legal">© 2026 Sabor Peruano. Proyecto académico de sitio web.</p>
+    </footer>
+</body>
+</html>

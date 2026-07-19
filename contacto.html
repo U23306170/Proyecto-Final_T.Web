@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante Sabor Peruano: platos tradicionales, contacto, registro e intranet administrativa.">
+    <title>Contacto | Sabor Peruano</title>
+    <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <script src="js/menu-responsivo.js" defer></script>
+    <script src="js/contacto.js" defer></script>
+</head><body>
+    <header class="encabezado-sitio">
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+            <a class="marca-sitio" href="index.html">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <span>Sabor Peruano</span>
+            </a>
+            <button class="boton-menu" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+            <div class="menu-principal">
+                <a class="enlace-menu" href="index.html">Inicio</a>
+                <a class="enlace-menu" href="sobre-nosotros.html">Nosotros</a>
+                <a class="enlace-menu" href="nuestro-catalogo.html">Catálogo</a>
+                <a class="enlace-menu" href="contacto.html" aria-current="page">Contacto</a>
+                <a class="enlace-menu" href="login.html">Iniciar sesión</a>
+                <a class="enlace-menu" href="registro.html">Registro</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor-principal">
+            <div class="distribucion-formulario">
+                <form class="formulario-sitio" id="formulario-contacto" novalidate onsubmit="enviarContacto(event)">
+                    <fieldset>
+                        <legend>Contáctanos</legend>
+                        <p class="descripcion-formulario">Complete los datos y recibirá una confirmación antes de finalizar el envío.</p>
+                        <div class="cuadricula-formulario">
+                            <div class="grupo-campo">
+                                <label for="nombres">Nombres</label>
+                                <input id="nombres" name="nombres" type="text" required maxlength="40" autocomplete="given-name" oninput="validarCampoContacto(this)">
+                                <span class="error-campo" id="error-nombres"></span>
+                            </div>
+                            <div class="grupo-campo">
+                                <label for="apellidos">Apellidos</label>
+                                <input id="apellidos" name="apellidos" type="text" required maxlength="50" autocomplete="family-name" oninput="validarCampoContacto(this)">
+                                <span class="error-campo" id="error-apellidos"></span>
+                            </div>
+                            <div class="grupo-campo">
+                                <label for="dni">DNI</label>
+                                <input id="dni" name="dni" type="text" required inputmode="numeric" maxlength="8" oninput="validarCampoContacto(this)">
+                                <span class="error-campo" id="error-dni"></span>
+                            </div>
+                            <div class="grupo-campo">
+                                <label for="correo">Correo electrónico</label>
+                                <input id="correo" name="correo" type="email" required autocomplete="email" oninput="validarCampoContacto(this)">
+                                <span class="error-campo" id="error-correo"></span>
+                            </div>
+                            <div class="grupo-campo grupo-campo-ancho">
+                                <label for="celular">Celular</label>
+                                <input id="celular" name="celular" type="tel" required inputmode="numeric" maxlength="9" autocomplete="tel" onchange="validarCampoContacto(this)" oninput="validarCampoContacto(this)">
+                                <span class="error-campo" id="error-celular"></span>
+                            </div>
+                            <div class="grupo-campo grupo-campo-ancho">
+                                <label for="consulta">Consulta</label>
+                                <textarea id="consulta" name="consulta" required maxlength="500" oninput="validarCampoContacto(this)"></textarea>
+                                <span class="error-campo" id="error-consulta"></span>
+                            </div>
+                        </div>
+                        <p class="mensaje-formulario" id="mensaje-contacto" aria-live="polite"></p>
+                        <div class="acciones-formulario">
+                            <button class="boton boton-primario" type="submit">Enviar consulta</button>
+                            <button class="boton boton-contorno" type="reset">Limpiar</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <aside class="tarjeta-informacion">
+                    <h2>Locales y atención</h2>
+                    <p>También puede comunicarse directamente con el restaurante.</p>
+                    <ul class="lista-locales">
+                        <li><strong>Miraflores:</strong> 12:00 p. m. - 11:00 p. m.</li>
+                        <li><strong>Comas:</strong> 11:00 a. m. - 10:00 p. m.</li>
+                        <li><strong>Lince:</strong> 12:00 p. m. - 10:30 p. m.</li>
+                        <li><strong>Correo:</strong> reservas@saborperuano.pe</li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <dialog class="dialogo" id="dialogo-contacto">
+        <div class="dialogo-contenido">
+            <h2>Consulta registrada</h2>
+            <p>Los datos fueron validados y el mensaje quedó listo para ser atendido.</p>
+            <div class="resumen-contacto" id="resumen-contacto"></div>
+            <div class="dialogo-acciones">
+                <button class="boton boton-primario" type="button" onclick="cerrarDialogoContacto()">Aceptar</button>
+            </div>
+        </div>
+    </dialog>
+    <footer class="pie-sitio">
+        <div class="contenido-pie">
+            <section class="marca-pie">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <div>
+                    <h2>Sabor Peruano</h2>
+                    <p>Tradición, calidad y atención cercana en cada visita.</p>
+                    <div class="redes-sociales" aria-label="Redes sociales">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+                    </div>
+                </div>
+            </section>
+            <section class="columna-pie">
+                <h3>Servicio</h3>
+                <ul>
+                    <li>Reservas</li>
+                    <li>Delivery</li>
+                    <li>Libro de reclamaciones</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Restaurante</h3>
+                <ul>
+                    <li>Carta peruana</li>
+                    <li>Locales en Lima</li>
+                    <li>Atención familiar</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Horario</h3>
+                <p>Lunes a domingo</p>
+                <p>12:00 p. m. - 11:00 p. m.</p>
+            </section>
+        </div>
+        <p class="pie-legal">© 2026 Sabor Peruano. Proyecto académico de sitio web.</p>
+    </footer>
+</body>
+</html>

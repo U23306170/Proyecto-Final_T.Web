@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante Sabor Peruano: platos tradicionales, contacto, registro e intranet administrativa.">
+    <title>Catálogo | Sabor Peruano</title>
+    <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <script src="js/menu-responsivo.js" defer></script>
+    <script src="js/catalogo.js" defer></script>
+</head><body>
+    <header class="encabezado-sitio">
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+            <a class="marca-sitio" href="index.html">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <span>Sabor Peruano</span>
+            </a>
+            <button class="boton-menu" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+            <div class="menu-principal">
+                <a class="enlace-menu" href="index.html">Inicio</a>
+                <a class="enlace-menu" href="sobre-nosotros.html">Nosotros</a>
+                <a class="enlace-menu" href="nuestro-catalogo.html" aria-current="page">Catálogo</a>
+                <a class="enlace-menu" href="contacto.html">Contacto</a>
+                <a class="enlace-menu" href="login.html">Iniciar sesión</a>
+                <a class="enlace-menu" href="registro.html">Registro</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor-principal">
+            <header class="encabezado-catalogo">
+                <h1 class="titulo-seccion">Nuestro catálogo</h1>
+                <p class="texto-introductorio">Platos y bebidas con imágenes, descripciones y precios organizados bajo una misma estructura visual.</p>
+            </header>
+
+            <div class="filtros-catalogo" aria-label="Filtros del catálogo">
+                <button class="boton-filtro filtro-activo" type="button" onclick="filtrarCatalogo('todos', this)">Todos</button>
+                <button class="boton-filtro" type="button" onclick="filtrarCatalogo('entrada', this)">Entradas</button>
+                <button class="boton-filtro" type="button" onclick="filtrarCatalogo('fondo', this)">Fondos</button>
+                <button class="boton-filtro" type="button" onclick="filtrarCatalogo('bebida', this)">Bebidas</button>
+            </div>
+
+            <section class="cuadricula-catalogo" aria-label="Platos disponibles">
+                <article class="tarjeta-plato" data-categoria="entrada">
+                    <img src="img/ceviche.svg" alt="Ceviche peruano">
+                    <div class="detalle-plato"><h2>Ceviche peruano</h2><p>Pescado fresco curtido en limón con choclo, camote y ají limo.</p><span class="precio-plato">S/ 35.00</span></div>
+                </article>
+                <article class="tarjeta-plato" data-categoria="fondo">
+                    <img src="img/lomo.svg" alt="Lomo saltado">
+                    <div class="detalle-plato"><h2>Lomo saltado</h2><p>Lomo fino al wok con cebolla, tomate, papas fritas y arroz.</p><span class="precio-plato">S/ 38.00</span></div>
+                </article>
+                <article class="tarjeta-plato" data-categoria="entrada">
+                    <img src="img/causa.webp" alt="Causa limeña">
+                    <div class="detalle-plato"><h2>Causa limeña</h2><p>Papa amarilla sazonada con ají y limón, rellena de pollo y palta.</p><span class="precio-plato">S/ 22.00</span></div>
+                </article>
+                <article class="tarjeta-plato" data-categoria="fondo">
+                    <img src="img/aji-gallina.svg" alt="Ají de gallina">
+                    <div class="detalle-plato"><h2>Ají de gallina</h2><p>Crema de ají amarillo con pollo deshilachado, arroz y papa.</p><span class="precio-plato">S/ 28.00</span></div>
+                </article>
+                <article class="tarjeta-plato" data-categoria="fondo">
+                    <img src="img/anticuchos.svg" alt="Anticuchos de corazón">
+                    <div class="detalle-plato"><h2>Anticuchos</h2><p>Brochetas marinadas en ají panca, servidas con papa y choclo.</p><span class="precio-plato">S/ 26.00</span></div>
+                </article>
+                <article class="tarjeta-plato" data-categoria="bebida">
+                    <img src="img/pisco-sour.svg" alt="Pisco sour">
+                    <div class="detalle-plato"><h2>Pisco sour</h2><p>Pisco quebranta, limón, jarabe de goma y espuma ligera.</p><span class="precio-plato">S/ 18.00</span></div>
+                </article>
+            </section>
+        </div>
+    </main>
+    <footer class="pie-sitio">
+        <div class="contenido-pie">
+            <section class="marca-pie">
+                <img src="img/logo.svg" alt="Logo de Sabor Peruano">
+                <div>
+                    <h2>Sabor Peruano</h2>
+                    <p>Tradición, calidad y atención cercana en cada visita.</p>
+                    <div class="redes-sociales" aria-label="Redes sociales">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+                    </div>
+                </div>
+            </section>
+            <section class="columna-pie">
+                <h3>Servicio</h3>
+                <ul>
+                    <li>Reservas</li>
+                    <li>Delivery</li>
+                    <li>Libro de reclamaciones</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Restaurante</h3>
+                <ul>
+                    <li>Carta peruana</li>
+                    <li>Locales en Lima</li>
+                    <li>Atención familiar</li>
+                </ul>
+            </section>
+            <section class="columna-pie">
+                <h3>Horario</h3>
+                <p>Lunes a domingo</p>
+                <p>12:00 p. m. - 11:00 p. m.</p>
+            </section>
+        </div>
+        <p class="pie-legal">© 2026 Sabor Peruano. Proyecto académico de sitio web.</p>
+    </footer>
+</body>
+</html>

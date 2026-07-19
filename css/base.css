@@ -1,0 +1,214 @@
+:root {
+    --color-primary: #991b1b;
+    --color-primary-dark: #701414;
+    --color-secondary: #f2c94c;
+    --color-secondary-dark: #d4a91f;
+    --color-surface: #ffffff;
+    --color-background: #fff8ed;
+    --color-text: #2d221c;
+    --color-muted: #6f6259;
+    --color-success: #166534;
+    --color-error: #b91c1c;
+    --color-border: #ead8c4;
+    --shadow-soft: 0 12px 30px rgba(45, 34, 28, 0.12);
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 24px;
+    --container-width: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text);
+    background:
+        linear-gradient(rgba(255, 248, 237, 0.93), rgba(255, 248, 237, 0.93)),
+        radial-gradient(circle at top left, #f7df9c 0, transparent 35%),
+        var(--color-background);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+}
+
+.contenedor-principal {
+    width: min(92%, var(--container-width));
+    margin: 0 auto;
+    padding: 42px 0 56px;
+}
+
+.titulo-seccion {
+    margin: 0 0 10px;
+    color: var(--color-primary);
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.texto-introductorio {
+    max-width: 760px;
+    margin: 0 auto 30px;
+    color: var(--color-muted);
+    text-align: center;
+}
+
+.panel {
+    padding: clamp(22px, 4vw, 40px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 11px 20px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton:hover,
+.boton:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(45, 34, 28, 0.18);
+}
+
+.boton-primario {
+    color: #ffffff;
+    background: var(--color-primary);
+}
+
+.boton-primario:hover,
+.boton-primario:focus-visible {
+    background: var(--color-primary-dark);
+}
+
+.boton-secundario {
+    color: var(--color-text);
+    background: var(--color-secondary);
+}
+
+.boton-secundario:hover,
+.boton-secundario:focus-visible {
+    background: var(--color-secondary-dark);
+}
+
+.boton-contorno {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background: transparent;
+}
+
+.mensaje-formulario {
+    min-height: 24px;
+    margin: 8px 0 0;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.mensaje-error {
+    color: var(--color-error);
+}
+
+.mensaje-exito {
+    color: var(--color-success);
+}
+
+.campo-error {
+    border-color: var(--color-error) !important;
+    background: #fff5f5 !important;
+}
+
+.solo-lectores {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.dialogo {
+    width: min(92%, 520px);
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-large);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.dialogo::backdrop {
+    background: rgba(45, 34, 28, 0.68);
+}
+
+.dialogo-contenido {
+    padding: 28px;
+    background: var(--color-surface);
+}
+
+.dialogo-contenido h2 {
+    margin-top: 0;
+    color: var(--color-primary);
+}
+
+.dialogo-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+@media (max-width: 640px) {
+    .contenedor-principal {
+        width: min(94%, var(--container-width));
+        padding-top: 26px;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    .dialogo-acciones .boton {
+        width: 100%;
+    }
+}
