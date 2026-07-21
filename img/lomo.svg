@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t d">
-<title id="t">Lomo Saltado</title><desc id="d">Wok, carne y vegetales</desc>
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7c2d12"/><stop offset="1" stop-color="#2d221c"/></linearGradient></defs>
-<rect width="800" height="500" fill="url(#g)"/><circle cx="400" cy="245" r="150" fill="#fff8ed" opacity=".94"/><circle cx="400" cy="245" r="112" fill="#f2c94c" opacity=".9"/>
-<path d="M290 245c70-90 150-90 220 0-70 80-150 80-220 0Z" fill="#ffffff" opacity=".82"/>
-<text x="400" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="700" fill="#ffffff">Lomo Saltado</text>
-</svg>
